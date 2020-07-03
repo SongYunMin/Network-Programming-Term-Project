@@ -33,6 +33,9 @@ public class Vending_init {
 					+ "`sport_num`, `highcoffee_num`, `soda_num`, `money`) "
 					+ "VALUES (NULL, '3', '3', '3', '3', '3', '0')";
 
+
+			dataOutputStream.flush();
+			
 			// 서버 측으로 데이터 전송
 			dataOutputStream.writeUTF(initData);
 			dataOutputStream.flush(); // 버퍼 완전히 비움

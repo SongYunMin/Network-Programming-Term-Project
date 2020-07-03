@@ -28,7 +28,48 @@ public class DataTransfer {
 	DataTransfer() {
 	}
 	
-	public String Transfer(String data) throws IOException {
+	public void StatusTransfer(String status) throws IOException{
+		try {
+			socket = new Socket("localhost", 9999);
+			System.out.println("Main Communication Server Connect");
+
+			// 출력 스트림 생성
+			outputStream = socket.getOutputStream();
+			dataOutputStream = new DataOutputStream(outputStream);
+
+			// 입력 스트림 생성
+			inputStream = socket.getInputStream();
+			dataInputStream = new DataInputStream(inputStream);
+
+			// 서버 측으로 데이터 전송
+			dataOutputStream.writeUTF(status);
+			dataOutputStream.flush(); // 버퍼 완전히 비움
+
+			// Server측에서 return 받을 메세지
+			String receviedMessage = dataInputStream.readUTF();
+			SQLresult = receviedMessage;
+			System.out.println("Return Message : " + receviedMessage);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally { // 소켓 닫음
+			try {
+				if (dataOutputStream != null)
+					dataOutputStream.close();
+				if (outputStream != null)
+					outputStream.close();
+				if (dataInputStream != null)
+					dataInputStream.close();
+				if (inputStream != null)
+					inputStream.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
+	public String dataTransfer(String data) throws IOException {
 		try {
 			socket = new Socket("localhost", 9999);
 			System.out.println("Main Communication Server Connect");
