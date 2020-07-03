@@ -23,37 +23,32 @@ public class DataTransfer {
 	public static DataInputStream dataInputStream = null;
 	public static String SQLresult;
 
+	// TODO : DB에서 가져오는 작업 필요
+	
 	DataTransfer() {
 	}
 	
 	public String Transfer(String data) throws IOException {
 		try {
-//			socket = new Socket("localhost", 9000);
-//			System.out.println("서버 연결 됨");
-//
-//			outputStream = socket.getOutputStream();
-//			dataOutputStream = new DataOutputStream(outputStream);
-//
-//			inputStream = socket.getInputStream();
-//			dataInputStream = new DataInputStream(inputStream);
-//
-//			System.out.println("자판기를 종료합니다.");
-//			// 초기화 Insert 문
-//			String initData = "INSERT INTO `vending` (`vending_index`, `water_num`, `coffee_num`, "
-//					+ "`sport_num`, `highcoffee_num`, `soda_num`, `money`) "
-//					+ "VALUES (NULL, '3', '3', '3', '3', '3', '0')";
+			socket = new Socket("localhost", 9999);
+			System.out.println("Main Communication Server Connect");
 
-			while (true) {
-				// 서버 측으로 데이터 전송
-				dataOutputStream.writeUTF(data);
-				dataOutputStream.flush(); // 버퍼 완전히 비움
-				
+			// 출력 스트림 생성
+			outputStream = socket.getOutputStream();
+			dataOutputStream = new DataOutputStream(outputStream);
 
-				// Server측에서 return 받을 메세지
-				String receviedMessage = dataInputStream.readUTF();
-				SQLresult = receviedMessage;
-				System.out.println("Return Message : " + receviedMessage);
-			}
+			// 입력 스트림 생성
+			inputStream = socket.getInputStream();
+			dataInputStream = new DataInputStream(inputStream);
+
+			// 서버 측으로 데이터 전송
+			dataOutputStream.writeUTF(data);
+			dataOutputStream.flush(); // 버퍼 완전히 비움
+
+			// Server측에서 return 받을 메세지
+			String receviedMessage = dataInputStream.readUTF();
+			SQLresult = receviedMessage;
+			System.out.println("Return Message : " + receviedMessage);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -74,10 +69,10 @@ public class DataTransfer {
 		return SQLresult;
 	}
 
-	public void serverDisonnect() {
+	public void serverDisconnect() {
 		try {
 			socket = new Socket("localhost", 9999);
-			System.out.println("서버 연결 됨");
+			System.out.println("Dis서버 연결 됨");
 			outputStream = socket.getOutputStream();
 			dataOutputStream = new DataOutputStream(outputStream);
 
@@ -85,7 +80,7 @@ public class DataTransfer {
 			// 서버 측으로 데이터 전송
 			dataOutputStream.writeUTF("stop\r\n");
 			dataOutputStream.flush(); // 버퍼 완전히 비움
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally { // 소켓 닫음

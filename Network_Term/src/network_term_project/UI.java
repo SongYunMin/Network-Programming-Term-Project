@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.net.Socket;
 
 import javax.swing.ImageIcon;
@@ -17,7 +18,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class UI extends JFrame {
-
 	private JPanel Money_text;
 	public static JTextField InputMoney;
 	public static JTextField WaterNum;
@@ -46,10 +46,6 @@ public class UI extends JFrame {
 	private JTextField Money500_Num;
 	private JTextField Money1000_Num;
 	public static Socket socket = null;
-	// 소켓 정의되어 있음
-	// public static DataTransfer a = new DataTransfer();
-
-	// 원래 Main을 삭제해야 함
 
 	public UI() {
 		/*
@@ -160,6 +156,14 @@ public class UI extends JFrame {
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
+				//String = ""
+				DataTransfer dt = new DataTransfer();
+				try {
+					dt.Transfer(" ");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 //				// 재고 Check
 //				if (water.getNumber() == 0) {
 //					WaterNum.setText("품절");
@@ -180,8 +184,8 @@ public class UI extends JFrame {
 //				else {
 //					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
 //				}
+			
 				
-				Socket socket = null;
 				
 			}
 		});
@@ -321,6 +325,9 @@ public class UI extends JFrame {
 		JButton Exit = new JButton("\uC885\uB8CC");
 		Exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DataTransfer dt = new DataTransfer();
+				// 서버 종료
+				dt.serverDisconnect();
 				System.exit(0);
 			}
 		});
