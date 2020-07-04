@@ -36,13 +36,6 @@ public class Manager extends JFrame {
 		setContentPane(Manager_Layout);
 		Manager_Layout.setLayout(null);
 
-		// 일/월/음료별 매출관리
-		JButton Drink_Sales = new JButton("\uC74C\uB8CC\uBCC4 \uB9E4\uCD9C \uAD00\uB9AC");
-		Drink_Sales.setBackground(new Color(255, 255, 224));
-		Drink_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Drink_Sales.setBounds(222, 318, 161, 63);
-		Manager_Layout.add(Drink_Sales);
-
 		JButton Daily_Sales = new JButton("\uCD1D \uB9E4\uCD9C \uD655\uC778");
 		Daily_Sales.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -50,13 +43,13 @@ public class Manager extends JFrame {
 			}
 		});
 		Daily_Sales.setBackground(new Color(255, 250, 240));
-		Daily_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Daily_Sales.setBounds(35, 318, 161, 63);
+		Daily_Sales.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
+		Daily_Sales.setBounds(134, 318, 161, 63);
 		Manager_Layout.add(Daily_Sales);
 
 		JLabel Admin_Label = new JLabel("\uAD00\uB9AC\uC790 \uBA54\uB274");
-		Admin_Label.setFont(new Font("서울남산체 EB", Font.PLAIN, 36));
-		Admin_Label.setBounds(24, 10, 172, 86);
+		Admin_Label.setFont(new Font("배달의민족 주아", Font.PLAIN, 36));
+		Admin_Label.setBounds(39, 22, 172, 86);
 		Manager_Layout.add(Admin_Label);
 
 		// 음료들의 재고를 보충
@@ -80,7 +73,7 @@ public class Manager extends JFrame {
 				JOptionPane.showMessageDialog(Manager_Layout, "물을 보충하였습니다.");
 			}
 		});
-		Plus_Water.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Plus_Water.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Plus_Water.setBounds(87, 159, 124, 47);
 		Manager_Layout.add(Plus_Water);
 
@@ -104,7 +97,7 @@ public class Manager extends JFrame {
 				JOptionPane.showMessageDialog(Manager_Layout, "커피를 보충하였습니다.");
 			}
 		});
-		Plus_Coffee.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Plus_Coffee.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Plus_Coffee.setBounds(223, 159, 124, 47);
 		Manager_Layout.add(Plus_Coffee);
 
@@ -129,7 +122,7 @@ public class Manager extends JFrame {
 				JOptionPane.showMessageDialog(Manager_Layout, "이온음료를 보충하였습니다.");
 			}
 		});
-		Plus_Sport.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Plus_Sport.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Plus_Sport.setBounds(359, 159, 124, 47);
 		Manager_Layout.add(Plus_Sport);
 
@@ -153,7 +146,7 @@ public class Manager extends JFrame {
 				JOptionPane.showMessageDialog(Manager_Layout, "고급커피를 보충하였습니다.");
 			}
 		});
-		Plus_HighCoffee.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Plus_HighCoffee.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Plus_HighCoffee.setBounds(154, 225, 124, 47);
 		Manager_Layout.add(Plus_HighCoffee);
 
@@ -178,7 +171,7 @@ public class Manager extends JFrame {
 				JOptionPane.showMessageDialog(Manager_Layout, "탄산음료를 보충하였습니다.");
 			}
 		});
-		Plus_Soda.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Plus_Soda.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Plus_Soda.setBounds(297, 225, 124, 47);
 		Manager_Layout.add(Plus_Soda);
 		
@@ -192,8 +185,8 @@ public class Manager extends JFrame {
 				change_pw.setVisible(true);
 			}
 		});
-		Change_PassWord.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Change_PassWord.setBounds(413, 318, 124, 63);
+		Change_PassWord.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
+		Change_PassWord.setBounds(307, 318, 124, 63);
 		Manager_Layout.add(Change_PassWord);
 		
 		// 음료 변경 버튼
@@ -204,7 +197,7 @@ public class Manager extends JFrame {
 				D_C.setVisible(true);
 			}
 		});
-		Change_Drink.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
+		Change_Drink.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Change_Drink.setBackground(new Color(173, 216, 230));
 		Change_Drink.setBounds(277, 35, 124, 48);
 		Manager_Layout.add(Change_Drink);
@@ -217,7 +210,7 @@ public class Manager extends JFrame {
 				dispose();
 			}
 		});
-		Exit_Button.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Exit_Button.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Exit_Button.setBounds(413, 36, 124, 48);
 		Manager_Layout.add(Exit_Button);
 	}
