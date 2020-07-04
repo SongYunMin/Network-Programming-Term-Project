@@ -156,40 +156,39 @@ public class UI extends JFrame {
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
-				//String = ""
-				DataTransfer dt = new DataTransfer();
-				try {
-					String buf;
-					dt.StatusTransfer("select");
-					buf = dt.dataTransfer("testTest");
-					System.out.println(buf);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				// 재고 Check
+				if (water.getNumber() == 0) {
+					WaterNum.setText("품절");
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+					return;
 				}
-//				// 재고 Check
-//				if (water.getNumber() == 0) {
-//					WaterNum.setText("품절");
-//					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
-//					return;
-//				}
-//				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
-//				if (money.getMoney() >= 450) {
-//					// 재고 한개 Down
-//					water.MinusNumber(water.getNumber(), 1);
-//					WaterNum.setText("수량 : " + water.getNumber());
-//					InputMoney.setText(String.valueOf(money.getMoney() - 450));
-//					money.MinusMoney(money.getMoney(), 450);
-//					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
-//					GS.Plus_Day_Sales(GS.getDay_Sales(), water.getWater());
-//				}
-//				// 잔액 부족
-//				else {
-//					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
-//				}
-			
-				
-				
+				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
+				if (money.getMoney() >= 450) {
+					// 재고 한개 Down
+					DataTransfer dt = new DataTransfer();
+					try {
+						String buf;
+						dt.StatusTransfer("update");
+						buf = dt.dataTransfer("UPDATE vending set water_num = water_num-1 "
+								+ "where vending_index=");
+						dt.StatusTransfer("money");
+						buf = dt.dataTransfer("UPDATE vending set money = money + 450 "
+								+ "where vending_index=");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					water.MinusNumber(water.getNumber(), 1);
+					WaterNum.setText("수량 : " + water.getNumber());
+					InputMoney.setText(String.valueOf(money.getMoney() - 450));
+					money.MinusMoney(money.getMoney(), 450);
+					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
+					GS.Plus_Day_Sales(GS.getDay_Sales(), water.getWater());
+				}
+				// 잔액 부족
+				else {
+					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
 			}
 		});
 
@@ -202,20 +201,34 @@ public class UI extends JFrame {
 		// Coffee 버튼
 		Coffee = new JButton("\uCEE4\uD53C");
 		Coffee.addActionListener(new ActionListener() {
+			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
 				if (coffee.getNumber() == 0) {
-					CoffeeNum.setText("품절");
+					WaterNum.setText("품절");
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
 					return;
 				}
+				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
 				if (money.getMoney() >= 500) {
 					// 재고 한개 Down
+					DataTransfer dt = new DataTransfer();
+					try {
+						String buf;
+						dt.StatusTransfer("update");
+						buf = dt.dataTransfer("UPDATE vending set coffee_num = coffee_num-1 where vending_index=");
+						dt.StatusTransfer("money");
+						buf = dt.dataTransfer("UPDATE vending set money = money + 500 "
+								+ "where vending_index=");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					coffee.MinusNumber(coffee.getNumber(), 1);
 					CoffeeNum.setText("수량 : " + coffee.getNumber());
 					InputMoney.setText(String.valueOf(money.getMoney() - 500));
 					money.MinusMoney(money.getMoney(), 500);
-					JOptionPane.showMessageDialog(Money_text, "커피를 구입하였습니다.");
+					JOptionPane.showMessageDialog(Money_text, "커피 을 구입하였습니다.");
 					GS.Plus_Day_Sales(GS.getDay_Sales(), coffee.getCoffee());
 				}
 				// 잔액 부족
@@ -242,6 +255,19 @@ public class UI extends JFrame {
 				}
 				if (money.getMoney() >= 550) {
 					// 재고 한개 Down
+					// 재고 한개 Down
+					DataTransfer dt = new DataTransfer();
+					try {
+						String buf;
+						dt.StatusTransfer("update");
+						buf = dt.dataTransfer("UPDATE vending set sport_num = sport_num-1 where vending_index=");
+						dt.StatusTransfer("money");
+						buf = dt.dataTransfer("UPDATE vending set money = money + 550 "
+								+ "where vending_index=");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					ion.MinusNumber(ion.getNumber(), 1);
 					SportNum.setText("수량 : " + ion.getNumber());
 					InputMoney.setText(String.valueOf(money.getMoney() - 550));
@@ -272,6 +298,20 @@ public class UI extends JFrame {
 				}
 				if (money.getMoney() >= 700) {
 					// 재고 한개 Down
+					// 재고 한개 Down
+					DataTransfer dt = new DataTransfer();
+					try {
+						String buf;
+						dt.StatusTransfer("update");
+						buf = dt.dataTransfer("UPDATE vending set highcoffee_num = highcoffee_num-1 "
+								+ "where vending_index=");
+						dt.StatusTransfer("money");
+						buf = dt.dataTransfer("UPDATE vending set money = money + 700 "
+								+ "where vending_index=");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					high_coffee.MinusNumber(high_coffee.getNumber(), 1);
 					HighCoffeeNum.setText("수량 : " + high_coffee.getNumber());
 					InputMoney.setText(String.valueOf(money.getMoney() - 700));
@@ -302,6 +342,20 @@ public class UI extends JFrame {
 				}
 				if (money.getMoney() >= 750) {
 					// 재고 한개 Down
+					// 재고 한개 Down
+					DataTransfer dt = new DataTransfer();
+					try {
+						String buf;
+						dt.StatusTransfer("update");
+						buf = dt.dataTransfer("UPDATE vending set soda_num = soda_num-1 where "
+								+ "vending_index=");
+						dt.StatusTransfer("money");
+						buf = dt.dataTransfer("UPDATE vending set money = money + 750 "
+								+ "where vending_index=");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					soda.MinusNumber(soda.getNumber(), 1);
 					SodaNum.setText("수량 : " + soda.getNumber());
 					InputMoney.setText(String.valueOf(money.getMoney() - 750));

@@ -87,9 +87,8 @@ public class DataTransfer {
 			dataOutputStream.flush(); // 버퍼 완전히 비움
 
 			// Server측에서 return 받을 메세지
-			String receviedMessage = dataInputStream.readUTF();
-			SQLresult = receviedMessage;
-			System.out.println("Return Message : " + receviedMessage);
+			SQLresult = dataInputStream.readUTF();
+			System.out.println("Return Message : " + SQLresult);
 
 		} catch (Exception e) {
 			e.printStackTrace();

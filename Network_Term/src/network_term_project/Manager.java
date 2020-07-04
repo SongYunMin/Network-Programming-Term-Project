@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class Manager extends JFrame {
@@ -64,6 +65,16 @@ public class Manager extends JFrame {
 		Plus_Water.setBackground(new Color(135, 206, 250));
 		Plus_Water.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DataTransfer dt = new DataTransfer();
+				try {
+					String buf;
+					dt.StatusTransfer("update");
+					buf = dt.dataTransfer("UPDATE vending set water_num = 3 "
+							+ "where vending_index=");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				UI.water.setNumber(3);
 				UI.WaterNum.setText(String.valueOf("수량 : " + UI.water.getNumber()));
 				JOptionPane.showMessageDialog(Manager_Layout, "물을 보충하였습니다.");
@@ -78,6 +89,16 @@ public class Manager extends JFrame {
 		Plus_Coffee.setBackground(new Color(0, 206, 209));
 		Plus_Coffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DataTransfer dt = new DataTransfer();
+				try {
+					String buf;
+					dt.StatusTransfer("update");
+					buf = dt.dataTransfer("UPDATE vending set coffee_num = 3 "
+							+ "where vending_index=");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				UI.coffee.setNumber(3);
 				UI.CoffeeNum.setText(String.valueOf("수량 : " + UI.coffee.getNumber()));
 				JOptionPane.showMessageDialog(Manager_Layout, "커피를 보충하였습니다.");
@@ -93,6 +114,16 @@ public class Manager extends JFrame {
 		Plus_Sport.setBackground(new Color(216, 191, 216));
 		Plus_Sport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DataTransfer dt = new DataTransfer();
+				try {
+					String buf;
+					dt.StatusTransfer("update");
+					buf = dt.dataTransfer("UPDATE vending set sport_num = 3 "
+							+ "where vending_index=");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				UI.ion.setNumber(3);
 				UI.SportNum.setText(String.valueOf("수량 : " + UI.ion.getNumber()));
 				JOptionPane.showMessageDialog(Manager_Layout, "이온음료를 보충하였습니다.");
@@ -107,6 +138,16 @@ public class Manager extends JFrame {
 		Plus_HighCoffee.setBackground(new Color(255, 255, 224));
 		Plus_HighCoffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DataTransfer dt = new DataTransfer();
+				try {
+					String buf;
+					dt.StatusTransfer("update");
+					buf = dt.dataTransfer("UPDATE vending set highcoffee_num = 3 "
+							+ "where vending_index=");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				UI.high_coffee.setNumber(3);
 				UI.HighCoffeeNum.setText(String.valueOf("수량 : " + UI.high_coffee.getNumber()));
 				JOptionPane.showMessageDialog(Manager_Layout, "고급커피를 보충하였습니다.");
@@ -122,6 +163,16 @@ public class Manager extends JFrame {
 		Plus_Soda.setBackground(new Color(255, 215, 0));
 		Plus_Soda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DataTransfer dt = new DataTransfer();
+				try {
+					String buf;
+					dt.StatusTransfer("update");
+					buf = dt.dataTransfer("UPDATE vending set soda_num = 3 "
+							+ "where vending_index=");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				UI.soda.setNumber(3);
 				UI.SodaNum.setText(String.valueOf("수량 : " + UI.soda.getNumber()));
 				JOptionPane.showMessageDialog(Manager_Layout, "탄산음료를 보충하였습니다.");
