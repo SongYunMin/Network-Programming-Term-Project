@@ -52,7 +52,7 @@ public class DataTransfer {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally { // ¼ÒÄÏ ´ÝÀ½
+		} finally { 
 			try {
 				if (dataOutputStream != null)
 					dataOutputStream.close();

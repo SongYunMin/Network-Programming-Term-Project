@@ -37,7 +37,7 @@ public class Login extends JFrame {
 		Login_Layout.setLayout(null);
 		
 		ID_textField = new JTextField();
-		ID_textField.setFont(new Font("서울남산체 L", Font.PLAIN, 12));
+		ID_textField.setFont(new Font("배달의민족 주아", Font.PLAIN, 12));
 		ID_textField.setBounds(180, 74, 139, 41);
 		ID_textField.setForeground(Color.GRAY);
 		Login_Layout.add(ID_textField);
@@ -45,12 +45,12 @@ public class Login extends JFrame {
 
 		
 		JLabel ID_Label = new JLabel("ID :");
-		ID_Label.setFont(new Font("서울남산체 EB", Font.PLAIN, 36));
+		ID_Label.setFont(new Font("배달의민족 주아", Font.PLAIN, 36));
 		ID_Label.setBounds(111, 67, 57, 48);
 		Login_Layout.add(ID_Label);
 		
 		JLabel PW_Label = new JLabel("PW :");
-		PW_Label.setFont(new Font("서울남산체 EB", Font.PLAIN, 36));
+		PW_Label.setFont(new Font("배달의민족 주아", Font.PLAIN, 36));
 		PW_Label.setBounds(94, 125, 74, 48);
 		Login_Layout.add(PW_Label);
 		
@@ -61,7 +61,7 @@ public class Login extends JFrame {
 		// 버튼 클릭시 이벤트 구현
 		JButton btnNewButton = new JButton("\uB85C\uADF8\uC778");
 		btnNewButton.setBackground(new Color(255, 235, 205));
-		btnNewButton.setFont(new Font("서울남산체 B", Font.PLAIN, 16));
+		btnNewButton.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String ID_Data = new String();
@@ -89,17 +89,17 @@ public class Login extends JFrame {
 		Login_Layout.add(btnNewButton);
 		
 		JLabel Login_Label = new JLabel("\uAD00\uB9AC\uC790\uBA54\uB274 \uB85C\uADF8\uC778");
-		Login_Label.setFont(new Font("서울남산체 EB", Font.PLAIN, 28));
+		Login_Label.setFont(new Font("배달의민족 주아", Font.PLAIN, 28));
 		Login_Label.setBounds(106, 10, 220, 34);
 		Login_Layout.add(Login_Label);
 		
 		JLabel lblId = new JLabel("\uCD08\uAE30 ID : manager");
-		lblId.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
+		lblId.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		lblId.setBounds(64, 173, 133, 48);
 		Login_Layout.add(lblId);
 		
 		JLabel lblPw = new JLabel("\uCD08\uAE30 PW : manager@1234");
-		lblPw.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
+		lblPw.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		lblPw.setBounds(190, 173, 185, 48);
 		Login_Layout.add(lblPw);
 		
@@ -110,7 +110,7 @@ public class Login extends JFrame {
 				dispose();
 			}
 		});
-		Exit.setFont(new Font("서울남산체 B", Font.PLAIN, 16));
+		Exit.setFont(new Font("배달의민족 주아", Font.PLAIN, 16));
 		Exit.setBounds(222, 217, 97, 34);
 		Login_Layout.add(Exit);
 	}

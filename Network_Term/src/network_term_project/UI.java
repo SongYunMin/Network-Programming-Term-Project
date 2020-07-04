@@ -85,15 +85,16 @@ public class UI extends JFrame {
 		 * 음료들의 Image
 		 */
 
-		ImageIcon water_image = new ImageIcon("\\src\\java_term_project\\image\\water.png");
+		ImageIcon water_image = new ImageIcon(
+				"C:\\Users\\thd93\\git\\Network-Programming-Term-Project\\Network_Term\\src\\java_term_project\\image\\water.png");
 		ImageIcon coffee_image = new ImageIcon(
-				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\coffee.jpg");
+				"C:\\Users\\thd93\\git\\Network-Programming-Term-Project\\Network_Term\\src\\java_term_project\\image\\coffee.jpg");
 		ImageIcon sport_image = new ImageIcon(
-				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\sportdrink.png");
+				"C:\\Users\\thd93\\git\\Network-Programming-Term-Project\\Network_Term\\src\\java_term_project\\image\\sportdrink.png");
 		ImageIcon highcoffee_image = new ImageIcon(
-				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\highcoffee.png");
+				"C:\\Users\\thd93\\git\\Network-Programming-Term-Project\\Network_Term\\src\\java_term_project\\image\\highcoffee.png");
 		ImageIcon soda_image = new ImageIcon(
-				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\soda.jpg");
+				"C:\\Users\\thd93\\git\\Network-Programming-Term-Project\\Network_Term\\src\\java_term_project\\image\\soda.jpg");
 
 		JLabel Water_Label = new JLabel(water_image);
 		Water_Label.setForeground(Color.BLACK);

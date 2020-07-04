@@ -39,13 +39,13 @@ public class Change_PW extends JFrame {
 		
 		JLabel Change_Lable = new JLabel("\uD604\uC7AC \uBE44\uBC00\uBC88\uD638 : ");
 		Change_Lable.setHorizontalAlignment(SwingConstants.LEFT);
-		Change_Lable.setFont(new Font("서울남산체 EB", Font.PLAIN, 22));
+		Change_Lable.setFont(new Font("배달의민족 주아", Font.PLAIN, 22));
 		Change_Lable.setBounds(59, 22, 149, 33);
 		Change_PW_Layout.add(Change_Lable);
 		
 		JLabel label = new JLabel("\uBCC0\uACBD\uD560 \uBE44\uBC00\uBC88\uD638 : ");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
-		label.setFont(new Font("서울남산체 EB", Font.PLAIN, 22));
+		label.setFont(new Font("배달의민족 주아", Font.PLAIN, 22));
 		label.setBounds(59, 73, 162, 33);
 		Change_PW_Layout.add(label);
 		
@@ -70,7 +70,7 @@ public class Change_PW extends JFrame {
 		
 		JLabel label_1 = new JLabel("\uC870\uAC74 : 8\uC790\uB9AC\uC774\uC0C1, \uD2B9\uC218\uBB38\uC790 1\uAC1C\uC774\uC0C1, \uC22B\uC790 1\uAC1C\uC774\uC0C1");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("서울남산체 EB", Font.PLAIN, 14));
+		label_1.setFont(new Font("배달의민족 주아", Font.PLAIN, 14));
 		label_1.setBounds(122, 218, 300, 33);
 		Change_PW_Layout.add(label_1);
 		
@@ -94,7 +94,7 @@ public class Change_PW extends JFrame {
 				}
 			}
 		});
-		Button_PWChange.setFont(new Font("서울남산체 EB", Font.PLAIN, 14));
+		Button_PWChange.setFont(new Font("배달의민족 주아", Font.PLAIN, 14));
 		Button_PWChange.setBounds(95, 151, 116, 43);
 		Change_PW_Layout.add(Button_PWChange);
 		
@@ -105,7 +105,7 @@ public class Change_PW extends JFrame {
 				dispose();
 			}
 		});
-		Exit.setFont(new Font("서울남산체 EB", Font.PLAIN, 14));
+		Exit.setFont(new Font("배달의민족 주아", Font.PLAIN, 14));
 		Exit.setBounds(223, 151, 116, 43);
 		Change_PW_Layout.add(Exit);
 	}
