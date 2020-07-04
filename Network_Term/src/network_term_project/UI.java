@@ -159,8 +159,10 @@ public class UI extends JFrame {
 				//String = ""
 				DataTransfer dt = new DataTransfer();
 				try {
+					String buf;
 					dt.StatusTransfer("select");
-					dt.dataTransfer("testTest");
+					buf = dt.dataTransfer("testTest");
+					System.out.println(buf);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
